@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Film List Application</title>
+</head>
+<body>
+        <div class="container" style ="margin-top:20px;">
+                <div class="card row">
+                    <div class="card-header bg-warning text-white text-center">Movie List Application</div>
+                    <div class="card-body">
+                            <form id = "film-form" name="form">
+                                <div class="form-row d-flex flex-wrap">
+                                    <div class="form-group col-md-6 my-2">
+                                        <input class="form-control" type="text" name="title" id = "title" placeholder="Movie Name">
+                                    </div>
+                                    <div class="form-group col-md-6 my-2 ps-2">
+                                            <input class="form-control" type="text" name="director" id = "director" placeholder="Movie Director">
+                                    </div>
+                                    <div class="form-group col-md-6 my-2">
+                                            <input class="form-control" type="text" name="url" id = "url" placeholder="Movie poster Link">
+                                    </div>
+                                  </div>
+                                  <button type="submit" class="col col-6 btn btn-success">Add Movie</button>
+                            </form>
+                            <hr>
+                    </div>
+                    <div class="card-body">
+                            <hr>
+                            <h5 class="card-title" id = "films-title">Movies</h5>
+                            <hr>
+                            <table class="table table-warning">
+                                    <thead>
+                                      <tr>
+                                        <th class="text-primary" scope="col">Movie Poster</th>
+                                        <th class="text-primary" scope="col">Movie Name</th>
+                                        <th class="text-primary" scope="col">Movie Director</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody id = "films">
+                                        <!-- <tr>
+                                            <td><img src="" class="img-fluid img-thumbnail"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="#" id = "delete-film" class = "btn btn-danger">Delete Movie</a></td>
+                                          </tr> -->
+                                          <!-- <tr>
+                                            <td><img src="" class="img-fluid img-thumbnail"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><a href="#" id = "delete-film" class = "btn btn-danger">Delete Movie</a></td>
+                                          </tr> -->
+                                    </tbody>
+                                  </table>
+                            <hr>  
+                            <a id = "clear-films" class="btn btn-danger" href="#">Clear All Moives</a>               
+                        </div>
+                      </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+            <script src="ui.js"></script>
+            <script src="storage.js"></script>
+            <script src= "film.js"></script>
+            <script src="project.js"></script>
+</body>
+</html>
