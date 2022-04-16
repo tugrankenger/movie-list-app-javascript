@@ -10,7 +10,7 @@ eventListeners(); // all event transactions for elements
 function eventListeners(){
     form.addEventListener("submit", addFilm);
     cardBody.addEventListener("click",deleteFilm);
-    //clear.addEventListener("clik",claerAllFilms);
+    clear.addEventListener("click",claerAllFilms);
     
 }
 
@@ -23,7 +23,7 @@ function addFilm(e){
     if(title === "" || director === "" || url === ""){
         // error (empty string)
         UI.displayMessage("This field cannot be left blank","danger");
-        console.log("debug")
+        //console.log("debug")
     }else{
         const newFilm = new Film(title,director,url);
         UI.addFilmToUI(newFilm);
@@ -42,5 +42,11 @@ function deleteFilm(e){
         if(confirm("Are you sure you want to delete the movie?")){
             UI.deleteFilmsToUI(e.target);
         }
+    }
+}
+
+function claerAllFilms(){
+    if(confirm("Are you sure you want to delete all movies?")){
+        UI.clearAllFilmsFromUI();
     }
 }
