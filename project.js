@@ -12,6 +12,13 @@ function eventListeners(){
     cardBody.addEventListener("click",deleteFilm);
     clear.addEventListener("click",claerAllFilms);
     
+    document.addEventListener("DOMContentLoaded",function(){
+        let films = Storage.getFilmsFromStorage();
+
+        films.forEach(function(film){
+            UI.addFilmToUI(film);
+        });
+    });
 }
 
 function addFilm(e){
@@ -27,11 +34,11 @@ function addFilm(e){
     }else{
         const newFilm = new Film(title,director,url);
         UI.addFilmToUI(newFilm);
+        Storage.addFilmToStorage(newFilm);
         UI.displayMessage("Success!","success");
-
-        UI.clearInputs(titleElement,directorElement,urlElement);
     }
 
+    UI.clearInputs(titleElement,directorElement,urlElement);
     e.preventDefault();
     
 }
@@ -41,6 +48,7 @@ function deleteFilm(e){
     if(e.target.id === "delete-film"){
         if(confirm("Are you sure you want to delete the movie?")){
             UI.deleteFilmsToUI(e.target);
+            Storage.deleteFilmFromStorage(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
         }
     }
 }
@@ -48,5 +56,6 @@ function deleteFilm(e){
 function claerAllFilms(){
     if(confirm("Are you sure you want to delete all movies?")){
         UI.clearAllFilmsFromUI();
+        Storage.clearAllFilmsToStorage();
     }
 }
